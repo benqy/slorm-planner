@@ -419,7 +419,7 @@ export class SlormancerTemplateService {
         const stats = splitData(data.STAT);
         const types = splitData(data.TYPE)
 
-        return this.parseTemplate(data.EN_DESC, stats, types)
+        return this.parseTemplate(data.CH_DESC, stats, types)
     }
 
     public getActivableDescriptionTemplate(data: GameDataActivable): string {
@@ -460,7 +460,7 @@ export class SlormancerTemplateService {
         const stats = splitData(data.STAT).filter(value => !value.startsWith('*'));
         const types = splitData(data.TYPE);
         
-        const template = data.EN_TEXT.replace(/ \([^\)]*?(%|\+|\-)[^\)]*?\)/g, '');
+        const template = data.CH_TEXT.replace(/ \([^\)]*?(%|\+|\-)[^\)]*?\)/g, '');
         return this.parseTemplate(template, stats, types);
     }
 

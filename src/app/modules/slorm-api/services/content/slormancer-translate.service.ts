@@ -110,7 +110,7 @@ export class SlormancerTranslateService {
 
             const gameData = this.slormancerDataService.getTranslation(key);
             if (gameData !== null) {
-                result = gameData.EN;
+                result = gameData.CH;
             } else if (key.startsWith('victims_reaper_')) {
                 const reaper = this.slormancerDataService.getGameDataReaper(strictParseInt(key.substr(15)));
                 if (reaper !== null) {

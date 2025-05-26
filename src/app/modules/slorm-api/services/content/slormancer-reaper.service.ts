@@ -312,7 +312,7 @@ export class SlormancerReaperService {
                 .reduce((stats, total) => [...stats, ...total] , [])
                 .filter(notEmptyOrNull);
 
-            const template = data.EN_DESC.replace(this.DESCRIPTION_SKILL_REGEXP, '');
+            const template = data.CH_DESC.replace(this.DESCRIPTION_SKILL_REGEXP, '');
 
             const [baseTemplate, benedictionTemplate, maledictionTemplate] =
                 this.slormancerTemplateService.prepareReaperDescriptionTemplate(template, stats);
@@ -449,7 +449,7 @@ export class SlormancerReaperService {
             benediction: null,
             malediction: null,
             activables: [],
-            lore: this.slormancerTemplateService.getReaperLoreTemplate(gameData.EN_LORE),
+            lore: this.slormancerTemplateService.getReaperLoreTemplate(gameData.CH_LORE),
             templates: this.getReaperTemplates(gameData, weaponClass),
             smith: { id: gameData.BLACKSMITH ?? ReaperSmith.Adrianne, name: '' },
             damageType: 'weapon_damage',
