@@ -362,7 +362,7 @@ export class SlormancerReaperService {
         }
 
         return {
-            name: gameData.EN_NAME,
+            name: gameData.CH_NAME,
             base: base.filter(isNotNullOrUndefined),
             benediction: benediction.filter(isNotNullOrUndefined),
             malediction: malediction.filter(isNotNullOrUndefined),

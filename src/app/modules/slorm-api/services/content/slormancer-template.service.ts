@@ -426,7 +426,7 @@ export class SlormancerTemplateService {
         const stats = splitData(data.DESC_VALUE);
         const types = splitData(data.DESC_VALUE_REAL);
         
-        return this.parseTemplate(data.EN_DESCRIPTION, stats, types);
+        return this.parseTemplate(data.CH_DESCRIPTION, stats, types);
     }
 
     public getSkillDescriptionTemplate(data: GameDataSkill): string {
@@ -434,7 +434,7 @@ export class SlormancerTemplateService {
             .map(stat => isDamageType(stat) ? '{damageType}' : stat);
         const types = splitData(data.DESC_VALUE_REAL);
         
-        const template = data.EN_DESCRIPTION.replace(/ \([^\)]*?(%|\+|\-)[^\)]*?\)/g, '');
+        const template = data.CH_DESCRIPTION.replace(/ \([^\)]*?(%|\+|\-)[^\)]*?\)/g, '');
         return this.parseTemplate(template, stats, types);
     }
 
@@ -443,7 +443,7 @@ export class SlormancerTemplateService {
             .map(stat => isDamageType(stat) ? '{damageType}' : stat);
         const types = splitData(data.VALUE_REAL);
 
-        const template = data.EN_DESCRIPTION.replace(/ \([^\)]*?(%|\+|\-)[^\)]*?\)/g, '');
+        const template = data.CH_DESCRIPTION.replace(/ \([^\)]*?(%|\+|\-)[^\)]*?\)/g, '');
 
         return this.parseTemplate(template, stats, types);
     }
@@ -452,7 +452,7 @@ export class SlormancerTemplateService {
         const stats = splitData(data.DESC_VALUE)
             .filter(value => !value.startsWith('*'));
         const types = splitData(data.DESC_VALUE_REAL);
-        const template = data.EN_DESCRIPTION.replace(/ \([^\)]*?(%|\+|\-)[^\)]*?\)/g, '');
+        const template = data.CH_DESCRIPTION.replace(/ \([^\)]*?(%|\+|\-)[^\)]*?\)/g, '');
         return this.parseAncestralLegacyTemplate(template, stats, types);
     }
 

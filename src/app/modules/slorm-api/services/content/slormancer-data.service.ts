@@ -63,7 +63,7 @@ export class SlormancerDataService {
     }
 
     public getGameDataAvailableReaper(): Array<GameDataReaper> {
-        return GAME_DATA.REAPER.filter(stat => stat.EN_NAME !== '');
+        return GAME_DATA.REAPER.filter(stat => stat.CH_NAME !== '');
     }
 
     public getGameDataAvailableLegendaries(): Array<GameDataLegendary> {
@@ -71,7 +71,7 @@ export class SlormancerDataService {
     }
 
     public getGameDataReaper(id: number): GameDataReaper | null {
-        return valueOrNull(GAME_DATA.REAPER.find(stat => stat.EN_NAME !== '' && stat.REF === id));
+        return valueOrNull(GAME_DATA.REAPER.find(stat => stat.CH_NAME !== '' && stat.REF === id));
     }
 
     public getGameDataReaperCount(): number {
@@ -91,7 +91,7 @@ export class SlormancerDataService {
     }
 
     public getParentsGameDataReaper(id: number): Array<GameDataReaper> {
-        return GAME_DATA.REAPER.filter(stat => stat.EN_NAME !== '' && stat.EVOLVE_IN === id)
+        return GAME_DATA.REAPER.filter(stat => stat.CH_NAME !== '' && stat.EVOLVE_IN === id)
     }  
     
     public getGameDataSkill(heroClass: HeroClass, id: number | null): GameDataSkill | null {

@@ -114,7 +114,7 @@ export class SlormancerTranslateService {
             } else if (key.startsWith('victims_reaper_')) {
                 const reaper = this.slormancerDataService.getGameDataReaper(strictParseInt(key.substr(15)));
                 if (reaper !== null) {
-                    result = reaper.EN_NAME;
+                    result = reaper.CH_NAME;
                 }
             } else if (key === 'RAR_loot_defensive') {
                 result = 'Defensive';
